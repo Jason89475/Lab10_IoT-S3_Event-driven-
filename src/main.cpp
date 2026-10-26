@@ -41,7 +41,7 @@ void onButtonBPressed()
     if (millis() - lastInterruptB > 200)
     {
       lastInterruptB = millis();
-      buttonBFlag = false;
+      buttonBFlag = volatile false;
     }
   }
 
@@ -60,7 +60,7 @@ void setup()
   pinMode(BUZZER, OUTPUT);
 
   // Interrupts
-  attachInterrupt(digitalPinToInterrupt(BUTTON_B), buttonB_ISR, FALLING);
+  attachInterrupt(32(BUTTON_B), buttonB_ISR, FALLING);
   // Callbacks
 }
 
